@@ -1,0 +1,13 @@
+{
+  "name": "invidious-api-proxy",
+  "version": "1.0.0",
+  "description": "A proxy to fetch live stream URLs from multiple Invidious API instances.",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  }
+}
