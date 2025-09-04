@@ -56,7 +56,6 @@ app.get("/s/:id", async (req, res) => {
         }
 
         // HLS URLの取得
-        // InvidiousのAPIレスポンスの構造に応じて、'hlsUrl'または'liveStreams'からURLを取得します。
         const hlsUrl = videoInfo.hlsUrl || (videoInfo.liveStreams && videoInfo.liveStreams[0]?.url);
         
         if (!hlsUrl) {
@@ -75,9 +74,5 @@ app.get("/s/:id", async (req, res) => {
     }
 });
 
-// Vercelは、Expressアプリケーションの起動に`server.js`または`index.js`をデフォルトで使用します。
-// Vercelでは、`process.env.PORT`環境変数を使用する必要はありませんが、ローカルでの実行には有用です。
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// Vercelは、エクスポートされた`app`オブジェクトをサーバーレス関数として自動的に使用します。
+module.exports = app;
