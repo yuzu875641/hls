@@ -1,13 +1,13 @@
 {
-  "name": "invidious-api-proxy",
+  "name": "invidious-hls-proxy",
   "version": "1.0.0",
-  "description": "A proxy to fetch live stream URLs from multiple Invidious API instances.",
-  "main": "api/index.js",
+  "description": "A server to get HLS URLs from Invidious video links.",
+  "main": "index.js",
   "scripts": {
-    "start": "node api/index.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "node-fetch": "^2.6.1"
+    "axios": "^1.6.8",
+    "express": "^4.19.2"
   }
 }
